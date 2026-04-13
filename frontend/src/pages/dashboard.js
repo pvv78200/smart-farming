@@ -1,8 +1,10 @@
 import React from "react";
 import "./dashboard.css";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const user = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate(); // ✅ added
 
   if (!user) {
     return <h2>Please login first</h2>;
@@ -46,9 +48,28 @@ function Dashboard() {
 
       {/* Features Section */}
       <div className="features-grid">
-        <div className="feature-card">🌾 Crop Recommendation</div>
-        <div className="feature-card">🍃 Disease Detection</div>
-        <div className="feature-card">💧 Irrigation Advice</div>
+
+        {/* ✅ Crop Recommendation Clickable */}
+        <div
+          className="feature-card"
+          onClick={() => navigate("/crop-recommendation")}
+          style={{ cursor: "pointer" }}
+        >
+          🌾 Crop Recommendation
+        </div>
+
+        {/* ❌ Not clickable (for now) */}
+        <div className="feature-card">
+          🍃 Disease Detection
+        </div>
+
+        <div 
+          className="feature-card"
+          onClick={() => navigate("/irrigation")}
+        >
+          💧 Irrigation Advice
+        </div>
+        
         <div className="feature-card">📊 Market Prices</div>
         <div className="feature-card">🏛 Govt Schemes</div>
         <div className="feature-card">🤖 AI Chatbot</div>

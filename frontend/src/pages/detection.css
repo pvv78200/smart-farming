@@ -1,0 +1,60 @@
+.detect-container {
+  text-align: center;
+  padding: 30px;
+}
+
+.detect-container h2 {
+  margin-bottom: 20px;
+}
+
+.preview-box {
+  margin-top: 20px;
+}
+
+.preview-box img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+.detect-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.detect-btn:hover {
+  background-color: #1b5e20;
+}
+
+/* Loading Spinner */
+.loader {
+  margin: 20px auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #2e7d32;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Result Card */
+.result-card {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #e8f5e9;
+  display: inline-block;
+}
