@@ -1,0 +1,242 @@
+body {
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Container */
+.market-container {
+  padding: 20px;
+}
+
+/* Title */
+.market-title {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+/* Section box */
+.section {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+input, select {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Button */
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #388e3c;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image */
+.product-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Stock */
+.in-stock {
+  color: green;
+  font-weight: bold;
+}
+
+.out-stock {
+  color: red;
+  font-weight: bold;
+}
+
+/* Category badges */
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-badge {
+  background: #c8e6c9;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+
+.preview-img {
+  width: 120px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card-actions button:first-child {
+  background: #2196f3;
+  color: white;
+}
+
+.card-actions button:last-child {
+  background: #f44336;
+  color: white;
+}
+
+.description {
+  font-size: 13px;
+  color: #555;
+  margin: 8px 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+
+.stock-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.stock-control button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.stock-control span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+
+
+/* 🔷 FORM CONTAINER */
+.section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* 🔷 ALL INPUTS COMMON STYLE */
+.section input,
+.section select,
+.section textarea {
+  width: 98%;
+  padding: 10px 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* 🔷 FOCUS EFFECT */
+.section input:focus,
+.section select:focus,
+.section textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* 🔷 TEXTAREA FIX */
+.section textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* 🔷 FILE INPUT */
+.section input[type="file"] {
+  padding: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+/* 🔷 BUTTON STYLE */
+.section button {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+  background: linear-gradient(45deg, #4caf50, #66bb6a);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* 🔷 BUTTON HOVER */
+.section button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(45deg, #43a047, #5cb85c);
+}
+
+/* 🔷 PREVIEW IMAGE */
+.preview-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}

@@ -70,7 +70,12 @@ function Dashboard() {
           💧 Irrigation Advice
         </div>
         
-        <div className="feature-card">📊 Market Prices</div>
+        <div 
+          className="feature-card"
+          onClick={() => navigate("/market")}
+        >
+        📊 Market Prices
+        </div>
         <div className="feature-card">🏛 Govt Schemes</div>
         <div className="feature-card">🤖 AI Chatbot</div>
       </div>

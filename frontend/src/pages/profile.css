@@ -1,0 +1,28 @@
+.profile-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-box {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-box input,
+.profile-box textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.profile-box button {
+  background: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

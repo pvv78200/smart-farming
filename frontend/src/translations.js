@@ -1,7 +1,7 @@
 const translations = {
   en: {
     title: "Smart AI Farming Advisor",
-    login: "Login",
+    login: "Login as Farmer",
     register: "Register",
     name: "Name",
     mobile: "Mobile Number",
