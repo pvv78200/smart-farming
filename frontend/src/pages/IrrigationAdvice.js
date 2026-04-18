@@ -9,7 +9,7 @@ function IrrigationAdvice() {
   const [locationName, setLocationName] = useState("");
   const [crop, setCrop] = useState("Rice");
 
-  const API_KEY = "a449436e712cc70c9da8c99595ef97d9";
+  const API_KEY = "beeff15ea86d3a6be002a62a4507ce41";
 
   const cropWater = {
     Rice: 10,

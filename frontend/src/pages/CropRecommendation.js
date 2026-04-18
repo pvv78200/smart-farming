@@ -8,7 +8,7 @@ function CropRecommendation() {
   const [city, setCity] = useState("");
   const [locationName, setLocationName] = useState("");
 
-  const API_KEY = "a449436e712cc70c9da8c99595ef97d9";
+  const API_KEY = "beeff15ea86d3a6be002a62a4507ce41";
 
   // 📍 AUTO LOCATION
   const handleAutoLocation = () => {
