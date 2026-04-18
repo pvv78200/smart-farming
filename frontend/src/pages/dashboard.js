@@ -78,6 +78,12 @@ function Dashboard() {
         </div>
         <div className="feature-card">🏛 Govt Schemes</div>
         <div className="feature-card">🤖 AI Chatbot</div>
+        <div
+          className="feature-card"
+          onClick={() => navigate("/farmer-orders")}
+        >
+          📦 Orders
+        </div>
       </div>
 
     </div>

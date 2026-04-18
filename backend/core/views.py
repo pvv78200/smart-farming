@@ -364,7 +364,8 @@ def add_to_cart(request):
                     "name": product["name"],
                     "price": product["price"],
                     "image": product.get("image"),
-                    "quantity": 1
+                    "quantity": 1,
+                    "farmer_mobile": farmer 
                 }]
             })
 
@@ -393,7 +394,8 @@ def add_to_cart(request):
                             "name": product["name"],
                             "price": product["price"],
                             "image": product.get("image"),
-                            "quantity": 1
+                            "quantity": 1,
+                            "farmer_mobile": farmer 
                         }
                     }
                 }
@@ -553,7 +555,7 @@ def verify_payment(request):
         "total": total,
         "token": token,
         "status": "Pending",
-        "farmer_mobile": cart["products"][0].get("farmer_mobile")
+        "farmer_mobile": cart.get("farmer")
     })
 
     # 🧹 Clear cart
@@ -817,19 +819,53 @@ def cod_checkout(request):
 
 
 
+from bson import ObjectId
+from django.http import JsonResponse
+import json
+from django.views.decorators.csrf import csrf_exempt
+
 @csrf_exempt
 def update_order_status(request):
-    data = json.loads(request.body)
+    try:
+        data = json.loads(request.body)
 
-    order_id = data.get("order_id")
-    status = data.get("status")
+        order_id = data.get("order_id")
+        status = data.get("status")
 
-    if not order_id or not status:
-        return JsonResponse({"message": "Invalid data"}, status=400)
+        if not order_id or not status:
+            return JsonResponse({"message": "Invalid data"}, status=400)
 
-    order_collection.update_one(
-        {"_id": ObjectId(order_id)},
-        {"$set": {"status": status}}
-    )
+        # ✅ VALID STATUS CHECK (VERY IMPORTANT)
+        valid_status = ["Pending", "Approved", "In Delivery", "Delivered", "Rejected"]
 
-    return JsonResponse({"message": "Status updated"})
+        if status not in valid_status:
+            return JsonResponse({"message": "Invalid status"}, status=400)
+
+        result = order_collection.update_one(
+            {"_id": ObjectId(order_id)},
+            {"$set": {"status": status}}
+        )
+
+        if result.matched_count == 0:
+            return JsonResponse({"message": "Order not found"}, status=404)
+
+        return JsonResponse({"message": "Status updated successfully"})
+
+    except Exception as e:
+        return JsonResponse({"message": str(e)}, status=500)
+
+
+from bson import ObjectId
+
+@csrf_exempt
+def farmer_orders(request):
+    farmer_mobile = request.GET.get("mobile")
+
+    orders = list(order_collection.find(
+        {"farmer_mobile": farmer_mobile}
+    ))
+
+    for o in orders:
+        o["_id"] = str(o["_id"])  # ✅ convert ObjectId
+
+    return JsonResponse({"orders": orders})
